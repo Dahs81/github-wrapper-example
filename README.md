@@ -8,7 +8,7 @@ Includes:
 #### How to Run
 
 ```
-docker run -it -e GITHUB_TOKEN="<your-github-token>" dahs81/github-wrapper-example
+docker run -it -p 8080:8080 -e GITHUB_TOKEN="<your-github-token>" dahs81/github-wrapper-example
 ```
 
 OR
@@ -16,3 +16,5 @@ OR
 ```
 GITHUB_TOKEN="<your-github-token>" go run main.go
 ```
+
+TODO: Add Prometheus monitoring to app and docker-compose.yml file
