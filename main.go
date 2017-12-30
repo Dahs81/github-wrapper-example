@@ -9,7 +9,7 @@ import (
 	"os"
 	"time"
 
-	gh "github.com/dahs81/github-wrapper-example/github"
+	gh "github.com/Dahs81/github-wrapper-example/github"
 	"github.com/gorilla/mux"
 	"golang.org/x/oauth2"
 )
