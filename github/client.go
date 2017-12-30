@@ -7,6 +7,7 @@ import (
 	"net/http"
 
 	"github.com/google/go-github/github"
+	"github.com/prometheus/common/log"
 )
 
 // MyGithubClient -
@@ -27,12 +28,12 @@ func Info(ctx context.Context, c *MyGithubClient) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		repos, _, err := c.Repositories.List(ctx, "", nil)
 		if err != nil {
-			panic(err)
+			log.Error("Unable to list the repositories: ", err)
 		}
 
 		out, e := json.Marshal(repos)
 		if e != nil {
-			panic(err)
+			log.Error("Unable to marshal repos to json: ", err)
 		}
 
 		w.Write(out)
