@@ -31,6 +31,8 @@ func Info(ctx context.Context, c *MyGithubClient) http.HandlerFunc {
 			log.Error("Unable to list the repositories: ", err)
 		}
 
+		// c.Client.Apps AND c.Apps are the same
+
 		out, e := json.Marshal(repos)
 		if e != nil {
 			log.Error("Unable to marshal repos to json: ", err)
