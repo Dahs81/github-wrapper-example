@@ -22,8 +22,10 @@ func main() {
 
 	tc := oauth2.NewClient(ctx, ts)
 
-	c := gh.NewMyGithubClient(tc)
-	client := c
+	client := gh.NewMyGithubClient(tc)
+
+	// Example of Embedding/Composition (LEARNING)
+	// c.Client.Apps AND c.Apps are the same thing
 
 	r := mux.NewRouter()
 	r.Handle("/info", gh.Info(ctx, &client))
